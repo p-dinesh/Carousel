@@ -1,0 +1,478 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style-popup.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      .header-container {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        border-bottom: 1px solid#cfc9c9;
+      }
+      .logo {
+        width: 10%;
+      }
+      .logo img {
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+        margin: 0 25px;
+        cursor: pointer;
+      }
+
+      .sign-container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 100%;
+        font-family: "Roboto", sans-serif;
+      }
+      .lg-signature {
+        width: 95%;
+        margin: 0px 25px;
+      }
+      .lg-signature .sign-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #cfc9c9;
+      }
+      .lg-signature .sign-title p {
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 20px 10px;
+        padding-bottom: 9px;
+      }
+      .products {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .products .link {
+        width: 95%;
+        margin: 0 25px;
+        display: flex;
+      }
+
+      .products .link a {
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-left: 10px;
+        cursor: pointer;
+        padding: 10px 0;
+      }
+      .products .login {
+        padding: 12px 25px;
+      }
+
+      .login {
+        /* display: flex; */
+        width: max-content;
+        /* justify-content: space-between; */
+      }
+
+      .login li {
+        list-style-type: none;
+        align-self: center;
+        background-color: royalblue;
+        color: white;
+        padding: 3px 5px;
+        border-radius: 3px;
+      }
+      .login a {
+        text-decoration: none;
+        color: white;
+      }
+      .products .login button {
+        background-color: #a50034;
+        color: white;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      .products .login button a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .products .login .hide {
+        display: none;
+      }
+
+      .products .link .product:hover {
+        color: #a50034;
+        border-bottom: 2px solid #a50034;
+      }
+
+      .welcome-back {
+        display: flex;
+        justify-content: space-between;
+      }
+      #welcome {
+        text-transform: lowercase;
+      }
+      #wrongUsername {
+        color: red;
+        font-size: 13px;
+        padding-left: 20px;
+      }
+
+      .login-container {
+        width: 23%;
+
+        padding: 30px;
+
+        position: relative;
+        background-color: white;
+        background-image: linear-gradient(to right bottom, #ece9e6, #ffffff);
+        box-shadow: 2px 2px 10px 0.8px #000000;
+        border-radius: 5px;
+      }
+      .login-image {
+        width: max-content;
+        margin: 0 auto;
+        padding: 15px 0;
+      }
+
+      .login-image img {
+        width: 80px;
+        height: 80px;
+        color: white;
+        text-align: center;
+      }
+
+      .body-container {
+        width: 100%;
+        height: 89.1%;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* background-image: linear-gradient(to right bottom, #eecda3, #ef629f);
+         */
+        background-image: linear-gradient(to right bottom, #c31432, #240b36);
+      }
+
+      .login-support-slide {
+        display: none;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 96px;
+        left: 0;
+      }
+
+      .login-support-slide {
+        width: 100%;
+        padding: 30px 60px;
+        z-index: 10;
+      }
+      .login-support-slide p {
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 10px 0;
+      }
+      .login-support-slide ul {
+        list-style-type: none;
+        line-height: 1.5;
+        cursor: pointer;
+      }
+      .login-support-slide a {
+        text-decoration: none;
+        color: black;
+      }
+      .login-support-downloads {
+        width: calc(100% / 3);
+        float: left;
+        padding: 0 30px;
+      }
+      .login-support-repair {
+        width: calc(100% / 3);
+        float: left;
+        border-left: 1px solid #bbbfc3;
+        padding: 0 30px;
+      }
+      .login-support-contact {
+        width: calc(100% / 3);
+        float: left;
+        border-left: 1px solid #bbbfc3;
+        padding: 0 30px;
+      }
+      .login-support {
+        width: max-content;
+      }
+
+      .login-support-slide li:hover {
+        text-decoration: underline;
+      }
+
+      .login-support:hover {
+        color: #a50034;
+        border-bottom: 2px solid #a50034;
+      }
+      .login-form label {
+        font-family: "Roboto", sans-serif;
+        padding-left: 16px;
+        font-size: 15px;
+      }
+
+      .login-form {
+        padding: 15px 0;
+      }
+      .login-form input {
+        padding: 10px 15px;
+        margin: 15px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 8px 1px #000000;
+      }
+      .login-btn {
+        display: flex;
+        justify-content: space-around;
+        width: max-content;
+        margin: 0 auto;
+        padding: 15px 0;
+      }
+      .lgn button,
+      .signup button {
+        padding: 8px 18px;
+        border: none;
+        outline: none;
+        background-color: #f2e9dc;
+        font-family: "Roboto Condensed", sans-serif;
+        border-radius: 15px;
+        font-weight: 700;
+        margin: 0 10px;
+        /* box-shadow: 2px 2px 8px 1px #000000; */
+        background-color: #a50034;
+        color: white;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        .sign-container {
+          display: none;
+        }
+        .header-container {
+          width: 100%;
+          height: 12%;
+        }
+        .logo {
+          width: 10%;
+          height: 100%;
+          margin: 0 auto;
+        }
+        .logo img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+      @media only screen and (max-width: 930px) {
+        .login-container {
+          width: max-content;
+          margin: 0 auto;
+        }
+        .logo {
+          width: 14%;
+          margin: 0 auto;
+        }
+        .logo img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .login-container {
+          width: max-content;
+          margin: 0 auto;
+        }
+        .login-form input {
+          padding: 10px 15px;
+        }
+        .lgn button,
+        .signup button {
+          padding: 10px 20px;
+          font-size: 16px;
+        }
+        .logo {
+          width: 20%;
+          margin: 0 auto;
+        }
+        .logo img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+      @media only screen and (max-width: 330px) {
+        .login-form input {
+          padding: 5px 12px;
+        }
+        .logo {
+          width: 25%;
+          margin: 0 auto;
+        }
+        .lgn button,
+        .signup button {
+          padding: 5px 15px;
+          font-size: 16px;
+        }
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-container">
+        <!-- logo -->
+        <div class="logo">
+          <img
+            onclick="window.location.href='index.html'"
+            src="image/lg_logo.jpg"
+          />
+        </div>
+
+        <!-- lg-signature -->
+        <div class="sign-container">
+          <div class="lg-signature">
+            <div class="sign-title">
+              <p>lg signature</p>
+              <div class="welcome-back">
+                <p id="welcome"></p>
+                <p>for business</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="products">
+            <div class="link">
+              <a class="product" onclick="window.location.href='#update'"
+                >products</a
+              >
+              <a class="login-support" onmouseover="loginSupport()">support</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- login-popup -->
+
+      <div id="loginmyModal" class="login-modal">
+        <div class="modal-content">
+          <p>Login successfully</p>
+        </div>
+      </div>
+
+      <!-- support-hover -->
+      <div
+        class="login-support-slide"
+        onmouseover="loginSupport()"
+        onmouseout="loginSupportOut()"
+      >
+        <div class="login-support-downloads">
+          <p>downloads and manuals</p>
+
+          <ul>
+            <li><a href="index.html">How-to & Tips</a></li>
+            <li><a href="index.html">Video Tutorials</a></li>
+            <li><a href="index.html">User Manual</a></li>
+            <li><a href="index.html">Software & Firmware</a></li>
+          </ul>
+        </div>
+        <div class="login-support-repair">
+          <p>repair & warranty</p>
+
+          <ul>
+            <li><a href="index.html">Service Request</a></li>
+            <li><a href="index.html">Track Repair</a></li>
+            <li><a href="index.html">Service Center Locatos</a>r</li>
+            <li><a href="index.html">Warranty Information</a></li>
+            <li><a href="index.html">Business Warranty</a></li>
+            <li><a href="index.html">Offering</a></li>
+          </ul>
+        </div>
+        <div class="login-support-contact">
+          <p>contact</p>
+
+          <ul>
+            <li><a href="index.html">Whatsapp</a></li>
+            <li><a href="index.html">Send an Email</a></li>
+            <li><a href="index.html">Telephons</a>e</li>
+            <li><a href="index.html">Inquiry Status</a></li>
+            <li><a href="index.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- login-form -->
+
+    <div class="body-container">
+      <div class="login-container">
+        <div class="login-image">
+          <img src="image/user2.png" />
+        </div>
+        <div class="login-form">
+          <form>
+            <label>User name</label>
+            <br />
+            <input id="uname" type="text" placeholder="Username" /><br />
+            <label>Password</label>
+            <br />
+            <input id="pass" type="password" placeholder="Password" />
+            <p id="wrongUsername">&nbsp;</p>
+          </form>
+        </div>
+
+        <div class="login-btn">
+          <div class="lgn">
+            <button onclick="return login()">Login</button>
+          </div>
+          <div class="signup">
+            <button onclick="window.location.href = 'signup.html'">
+              Sign up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script>
+      var loginSupport_slide = document.querySelector(".login-support-slide");
+
+      function loginSupport() {
+        loginSupport_slide.style.display = "block";
+      }
+
+      function loginSupportOut() {
+        loginSupport_slide.style.display = "none";
+      }
+    </script>
+
+    <script src="script/login-script.js"></script>
+    <script src="script/signup-script.js"></script>
+  </body>
+</html>

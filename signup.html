@@ -1,0 +1,569 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style-popup.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .header-container {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        border-bottom: 1px solid#cfc9c9;
+      }
+      .logo {
+        width: 10%;
+      }
+      .logo img {
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+        margin: 0 25px;
+        cursor: pointer;
+      }
+
+      .sign-container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 100%;
+        font-family: "Roboto", sans-serif;
+      }
+      .lg-signature {
+        width: 95%;
+        margin: 0px 25px;
+      }
+      .lg-signature .sign-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #cfc9c9;
+      }
+      .lg-signature .sign-title p {
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 20px 10px;
+        padding-bottom: 9px;
+      }
+      .products {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .products .link {
+        width: 95%;
+        margin: 0 25px;
+        display: flex;
+      }
+
+      .products .link a {
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-left: 10px;
+        cursor: pointer;
+        padding: 10px 0;
+      }
+      .products .login {
+        padding: 12px 25px;
+      }
+
+      .login {
+        /* display: flex; */
+        width: max-content;
+        /* justify-content: space-between; */
+      }
+      .login-form label {
+        font-family: "Roboto", sans-serif;
+      }
+      .login li {
+        list-style-type: none;
+        align-self: center;
+        background-color: royalblue;
+        color: white;
+        padding: 3px 5px;
+        border-radius: 3px;
+      }
+      .login a {
+        text-decoration: none;
+        color: white;
+      }
+      .products .login button {
+        background-color: #a50034;
+        color: white;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      .products .login button a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .products .login .hide {
+        display: none;
+      }
+
+      .products .link .product:hover {
+        color: #a50034;
+        border-bottom: 2px solid #a50034;
+      }
+
+      .welcome-back {
+        display: flex;
+        justify-content: space-between;
+      }
+      #welcome {
+        text-transform: lowercase;
+      }
+      #wrongUsername {
+        text-align: center;
+        color: white;
+      }
+
+      .body-container {
+        width: 100%;
+        /* height: 89.1%; */
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(to right bottom, #c31432, #240b36);
+      }
+
+      .signup-header p {
+        font-size: 30px;
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: 400;
+        padding: 20px;
+        color: white;
+      }
+      .login-container {
+        width: 27%;
+        background-image: white;
+        background-image: linear-gradient(to right bottom, #ece9e6, #ffffff);
+
+        padding: 34px;
+        box-shadow: 2px 2px 10px 2px #000000;
+        border-radius: 5px;
+      }
+      #error {
+        color: red;
+        font-size: 13px;
+      }
+
+      #phoneError {
+        color: red;
+        font-size: 13px;
+      }
+
+      #firstName {
+        color: red;
+        font-size: 13px;
+      }
+
+      #lastName {
+        color: red;
+        font-size: 13px;
+      }
+
+      #phoneNo {
+        color: red;
+        font-size: 13px;
+      }
+      #match {
+        color: red;
+        font-size: 13px;
+      }
+      .signup-support-slide {
+        display: none;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 96px;
+        left: 0;
+      }
+
+      .signup-support-slide {
+        width: 100%;
+        padding: 30px 60px;
+        z-index: 10;
+      }
+      .signup-support-slide p {
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 10px 0;
+      }
+      .signup-support-slide ul {
+        list-style-type: none;
+        line-height: 1.5;
+        cursor: pointer;
+      }
+      .signup-support-slide a {
+        text-decoration: none;
+        color: black;
+      }
+      .signup-support-downloads {
+        width: calc(100% / 3);
+        float: left;
+        padding: 0 30px;
+      }
+      .signup-support-repair {
+        width: calc(100% / 3);
+        float: left;
+        border-left: 1px solid #bbbfc3;
+        padding: 0 30px;
+      }
+      .signup-support-contact {
+        width: calc(100% / 3);
+        float: left;
+        border-left: 1px solid #bbbfc3;
+        padding: 0 30px;
+      }
+      .signup-support {
+        width: max-content;
+      }
+
+      .signup-support-slide li:hover {
+        text-decoration: underline;
+      }
+
+      .signup-support:hover {
+        color: #a50034;
+        border-bottom: 2px solid #a50034;
+      }
+
+      .login-form {
+        width: min-content;
+        margin: 0 auto;
+      }
+      .login-form input {
+        padding: 10px 15px;
+        margin: 12px 0;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        display: block;
+        font-size: 14px;
+
+        box-shadow: 2px 2px 8px 0.5px #000000;
+      }
+      #countries {
+        width: 80%;
+        padding: 10px 15px;
+        margin: 12px 0;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        display: block;
+        font-size: 14px;
+
+        box-shadow: 2px 2px 8px 0.5px #000000;
+      }
+      #invalidOtp {
+        color: red;
+        padding: 15px 0;
+        font-size: 14px;
+      }
+      .sub {
+        width: max-content;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .sub button {
+        padding: 8px 18px;
+        border: none;
+        outline: none;
+        background-color: #f2e9dc;
+        font-family: "Roboto Condensed", sans-serif;
+        border-radius: 15px;
+        font-weight: 700;
+        background-color: #a50034;
+        color: white;
+        margin: 10px;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        .sign-container {
+          display: none;
+        }
+        .header-container {
+          width: 100%;
+          height: 12%;
+        }
+        .logo {
+          width: 10%;
+          height: 100%;
+          margin: 0 auto;
+        }
+        .logo img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+      @media only screen and (max-width: 930px) {
+        .login-container {
+          width: max-content;
+          margin: 0 auto;
+        }
+        .logo {
+          width: 14%;
+          margin: 0 auto;
+        }
+        .logo img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .login-container {
+          width: max-content;
+          margin: 0 auto;
+        }
+        .login-form input {
+          padding: 10px 15px;
+        }
+        .lgn button,
+        .signup button {
+          padding: 10px 20px;
+          font-size: 16px;
+        }
+        .logo {
+          width: 20%;
+          margin: 0 auto;
+        }
+        .logo img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+      @media only screen and (max-width: 330px) {
+        .login-container {
+          width: max-content;
+          margin: 0 auto;
+        }
+        .login-form input {
+          padding: 5px 12px;
+        }
+        .logo {
+          width: 25%;
+          margin: 0 auto;
+        }
+        .lgn button,
+        .signup button {
+          padding: 5px 15px;
+          font-size: 16px;
+        }
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- header -->
+      <div class="header-container">
+        <!-- logo -->
+        <div class="logo">
+          <img
+            onclick="window.location.href='index.html'"
+            src="image/lg_logo.jpg"
+          />
+        </div>
+
+        <!-- lg-signature -->
+        <div class="sign-container">
+          <div class="lg-signature">
+            <div class="sign-title">
+              <p>lg signature</p>
+              <div class="welcome-back">
+                <p id="welcome"></p>
+                <p>for business</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="products">
+            <div class="link">
+              <a class="product" onclick="window.location.href='#update'"
+                >products</a
+              >
+              <a class="signup-support" onmouseover="signupSupport()"
+                >support</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- registration popup -->
+      <div id="registermyModal" class="register-modal">
+        <div class="modal-content">
+          <p>Register successfully</p>
+        </div>
+      </div>
+
+      <!-- otp popup -->
+      <div id="otpmyModal" class="otp-modal">
+        <div class="modal-content">
+          <input type="tel" placeholder="Enter OTP" id="input-otp" />
+          <p id="invalidOtp">&nbsp;</p>
+          <div class="buttonContainer">
+            <button onclick="window.location.href='signup.html'">Cancel</button>
+            <button id="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- support-hover -->
+
+      <div
+        class="signup-support-slide"
+        onmouseover="signupSupport()"
+        onmouseout="signupSupportOut()"
+      >
+        <div class="signup-support-downloads">
+          <p>downloads and manuals</p>
+
+          <ul>
+            <li><a href="index.html">How-to & Tips</a></li>
+            <li><a href="index.html">Video Tutorials</a></li>
+            <li><a href="index.html">User Manual</a></li>
+            <li><a href="index.html">Software & Firmware</a></li>
+          </ul>
+        </div>
+        <div class="signup-support-repair">
+          <p>repair & warranty</p>
+
+          <ul>
+            <li><a href="index.html">Service Request</a></li>
+            <li><a href="index.html">Track Repair</a></li>
+            <li><a href="index.html">Service Center Locatos</a>r</li>
+            <li><a href="index.html">Warranty Information</a></li>
+            <li><a href="index.html">Business Warranty</a></li>
+            <li><a href="index.html">Offering</a></li>
+          </ul>
+        </div>
+        <div class="signup-support-contact">
+          <p>contact</p>
+
+          <ul>
+            <li><a href="index.html">Whatsapp</a></li>
+            <li><a href="index.html">Send an Email</a></li>
+            <li><a href="index.html">Telephons</a>e</li>
+            <li><a href="index.html">Inquiry Status</a></li>
+            <li><a href="index.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- body -->
+      <div class="body-container">
+        <div class="signup-header">
+          <p>Create your Account</p>
+        </div>
+
+        <!-- login-form -->
+        <div class="login-container">
+          <div class="login-form">
+            <form>
+              <label>First name</label>
+              <input id="fname" type="text" required />
+              <p id="firstName">&nbsp;</p>
+
+              <label>Last name</label>
+              <input id="lname" type="text" required />
+              <p id="lastName">&nbsp;</p>
+
+              <label>User name</label>
+              <input id="uname" type="text" required />
+              <p id="error">&nbsp;</p>
+
+              <label>Password</label>
+              <input id="pass" type="password" required />
+              <p id="phoneNo">&nbsp;</p>
+
+              <label>Confirm password</label>
+              <input id="pass1" type="password" required />
+              <p id="match">&nbsp;</p>
+
+              <label>Mobile number</label>
+              <br />
+
+              <select name="countries" id="countries"></select>
+              <input id="phone" type="tel" />
+              <p id="phoneError">&nbsp;</p>
+              <br />
+
+              <div class="submit-btn">
+                <div class="sub">
+                  <button
+                    type="menu"
+                    id="back"
+                    onclick="window.location.href='login.html'"
+                  >
+                    Login
+                  </button>
+                  <button type="submit">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script>
+      var signupSupport_slide = document.querySelector(".signup-support-slide");
+      function signupSupport() {
+        signupSupport_slide.style.display = "block";
+      }
+
+      function signupSupportOut() {
+        signupSupport_slide.style.display = "none";
+      }
+    </script>
+
+    <script src="script/signup-script.js"></script>
+    <script src="script/login-script.js"></script>
+
+    <script>
+      let countries; //will contain fetched data
+      fetch("https://restcountries.eu/rest/v2/all")
+        .then((res) => res.json())
+        .then((data) => initialize(data))
+        .catch((err) => console.log("Error:", err));
+
+      function initialize(countriesData) {
+        countries = countriesData;
+        let options = "";
+        let flagOptions = "";
+        for (let i = 0; i < countries.length; i++) {
+          options += `<option value="${countries[i]}">${countries[i].name}(+${countries[i].callingCodes})
+  </option>`;
+          imageURL = countries[i].flag;
+        }
+        document.getElementById("countries").innerHTML = options;
+        document.getElementById("flag").setAttribute("src", imageURL);
+      }
+    </script>
+  </body>
+</html>

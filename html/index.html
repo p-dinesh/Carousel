@@ -1,0 +1,632 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-carousel.css" />
+    <link rel="stylesheet" href="css/style-popup.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- header -->
+      <div class="header-container">
+        <!-- logo -->
+        <div class="logo">
+          <img src="image/lg_logo.jpg" />
+        </div>
+
+        <!-- lg-signature -->
+        <div class="sign-container">
+          <div class="lg-signature">
+            <div class="sign-title">
+              <p>lg signature</p>
+              <div class="welcome-back">
+                <p id="welcome"></p>
+                <p>for business</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="products">
+            <div class="link">
+              <a class="product" onclick="window.location.href='#update'"
+                >products</a
+              >
+              <a class="support" onmouseover="support()">support</a>
+            </div>
+            <div class="login">
+              <button class="login_btn"><a href="login.html">Login</a></button>
+              <button class="logout hide" onclick="logout()">Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--logout popup -->
+      <div id="logoutmyModal" class="logout-modal">
+        <div class="modal-content">
+          <div class="smiley-img">
+            <img src="image/smiley.jpg" />
+          </div>
+          <p>You have successfully logged out</p>
+          <p>Thank you</p>
+        </div>
+      </div>
+
+      <!-- carousel-slide-->
+      <div class="carousel-container" id="carousel">
+        <button id="prev"><i class="fas fa-chevron-left"></i></button>
+        <button id="next"><i class="fas fa-chevron-right"></i></button>
+        <div class="carousel-slide">
+          <img src="image/slide_four.jpg" id="last-img" />
+          <img class="slide_one" src="image/slide-one.jpg" />
+          <img class="slide_two" src="image/slide-two.jpg" />
+          <img class="slide_three" src="image/slidethree.jpg" />
+          <img class="slide_four" src="image/slide_four.jpg" />
+          <img src="image/slide_first.jpg" id="first-img" />
+        </div>
+        <!-- support hover -->
+        <div
+          class="support-slide"
+          onmouseover="support()"
+          onmouseout="supportOut()"
+        >
+          <div class="support-downloads">
+            <p>downloads and manuals</p>
+
+            <ul>
+              <li><a href="#contact">How-to & Tips</a></li>
+              <li><a href="#contact">Video Tutorials</a></li>
+              <li><a href="#contact">User Manual</a></li>
+              <li><a href="#contact">Software & Firmware</a></li>
+            </ul>
+          </div>
+          <div class="support-repair">
+            <p>repair & warranty</p>
+
+            <ul>
+              <li><a href="#contact">Service Request</a></li>
+              <li><a href="#contact">Track Repair</a></li>
+              <li><a href="#contact">Service Center Locatos</a>r</li>
+              <li><a href="#contact">Warranty Information</a></li>
+              <li><a href="#contact">Business Warranty</a></li>
+              <li><a href="#contact">Offering</a></li>
+            </ul>
+          </div>
+          <div class="support-contact">
+            <p>contact</p>
+
+            <ul>
+              <li><a href="#contact">Whatsapp</a></li>
+              <li><a href="#contact">Send an Email</a></li>
+              <li><a href="#contact">Telephone</a></li>
+              <li><a href="#contact">Inquiry Status</a></li>
+              <li><a href="#contact">Customer Feedback</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- items-slide -->
+      <div class="item-container">
+        <button id="item_prev"><</button>
+        <button id="item_next">></button>
+        <div class="item-cards">
+          <div class="item-card">
+            <img src="image/tv.jpg" />
+            <p class="item-detail"><a href="#update">OLED TVs</a></p>
+          </div>
+          <div class="item-card">
+            <img src="image/entertainment.jpg" />
+            <p class="item-detail"><a href="#update">Home Container</a></p>
+          </div>
+          <div class="item-card">
+            <img src="image/refrigerator.jpg" />
+            <p class="item-detail"><a href="#update">Refrigerator</a></p>
+          </div>
+          <div class="item-card">
+            <img src="image/dishwashes.jpg" />
+            <p class="item-detail"><a href="#update">Dishwashers</a></p>
+          </div>
+          <div class="item-card">
+            <img src="image/ac.jpg" />
+            <p class="item-detail">
+              <a href="#update">washing Machines</a>
+            </p>
+          </div>
+          <div class="item-card">
+            <img src="image/washingmachine.jpg" />
+            <p class="item-detail">
+              <a href="#update">Residential Air Conditioners</a>
+            </p>
+          </div>
+          <div class="item-card">
+            <img src="image/mobile.jpg" />
+            <p class="item-detail"><a href="#update">Mobiles</a></p>
+          </div>
+          <div class="item-card">
+            <img src="image/microwave.jpg" />
+            <p class="item-detail"><a href="#update">Microwave Ovens</a></p>
+          </div>
+          <div class="item-card">
+            <img src="image/waterpurifier.jpg" />
+            <p class="item-detail"><a href="#update">Water Purifiers</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- features -->
+
+      <div class="feature-container">
+        <div class="feature-title">
+          <p>Browse with Ease, Shop with Confidence</p>
+        </div>
+
+        <div class="feature-cards">
+          <div class="feature-card">
+            <div class="feature-img">
+              <img src="image/free-shipping.jpg" />
+            </div>
+            <div class="feature-img__title">
+              <p>Free Shipping</p>
+            </div>
+            <div class="feature-img__content">
+              <p>
+                Avail Free & Safe shipping in serviceable pin codes, whenever
+                you shop from https://www.lg.com/in We take pride in delivering
+                most of our orders on priority
+              </p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-img">
+              <img src="image/Secure-Payments.jpg" />
+            </div>
+            <div class="feature-img__title">
+              <p>Secure Payments</p>
+            </div>
+            <div class="feature-img__content">
+              <p>
+                Your Data security & privacy is our priority. Pay securely
+                through 128 bit encrypted payment gateway. We support credit
+                cards, net banking and debits cards.
+              </p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-img">
+              <img src="image/Exclusive-Offers.jpg" />
+            </div>
+            <div class="feature-img__title">
+              <p>Exclusive Offers</p>
+            </div>
+            <div class="feature-img__content">
+              <p>
+                Now enjoy the benefits of LG exclusive offers. Subscribe LG.com
+                to remain updated on latest offers
+              </p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-img">
+              <img src="image/Hassle-Free-Installation.jpg" />
+            </div>
+            <div class="feature-img__title">
+              <p>Hassle Free Installation</p>
+            </div>
+            <div class="feature-img__content">
+              <p>
+                Once you place order on LG.com your installation request will be
+                generated post-delivery and our expert engineers will guide you
+                through user manual
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- highlight -->
+
+      <div class="highlight-container">
+        <div class="highlight">
+          <div class="btn btn1" onclick="clk(0)">&nbsp;</div>
+          <div class="btn btn2" onclick="clk(1)">&nbsp;</div>
+          <div class="btn btn3" onclick="clk(2)">&nbsp;</div>
+          <div class="btn btn4" onclick="clk(3)">&nbsp;</div>
+        </div>
+
+        <div class="highlight-slide">
+          <img src="image/new_one.jpg" />
+          <img src="image/new_five.jpg" />
+          <img src="image/new_three.jpg" />
+          <img src="image/new_four.jpg" />
+        </div>
+      </div>
+
+      <!-- know more -->
+      <div class="know-more__container">
+        <div class="know-more__cards">
+          <div class="know-more__card">
+            <div class="know-more__img know-img__one">
+              <img src="image/fresh.jpg" />
+            </div>
+            <div class="know-more__content">
+              <p>Hygiene Fresh+<sup>TM</sup> Removes upto 99.999%* bacteria</p>
+            </div>
+            <div class="know-more__link">
+              <a href="#carousel">know more ></a>
+            </div>
+          </div>
+          <div class="know-more__card">
+            <div class="know-more__img know-img__two">
+              <img src="image/kreeson-naraidoo-hQrRAWhHU5w-unsplash.jpg" />
+            </div>
+            <div class="know-more__content">
+              <p>Ask for free home demo</p>
+            </div>
+            <div class="know-more__link">
+              <a href="#carousel">know more ></a>
+            </div>
+          </div>
+          <div class="know-more__card">
+            <div class="know-more__img know-img__three">
+              <img src="image/intelligent.jpg" />
+            </div>
+            <div class="know-more__content">
+              <p>TV at its most intelligent</p>
+            </div>
+            <div class="know-more__link">
+              <a href="#carousel">know more ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- most popular products -->
+
+      <div class="update-container" id="update">
+        <div class="update-header">
+          <a>most popular</a>
+        </div>
+
+        <div class="update-slide__container">
+          <button id="update_prev"><</button>
+          <button id="update_next">></button>
+          <div class="update-cards">
+            <div class="update-card" onmouseover="over(0)" onmouseout="out(0)">
+              <img
+                class="update-img"
+                onmouseover="over(0)"
+                src="image/update_one.jpg"
+              />
+              <div class="buynow">
+                <button
+                  class="buy"
+                  onclick="window.location.href='update-one.html'"
+                >
+                  Buy Now
+                </button>
+                <button class="where">where to buy</button>
+              </div>
+
+              <p class="detail">
+                LG Dishwasher with True Steam<sup>TM</sup> QuadWash<sup>TM</sup>
+                Inverter Direct Drive Technology
+              </p>
+
+              <p class="price">Rs.59990</p>
+            </div>
+            <div class="update-card" onmouseover="over(1)" onmouseout="out(1)">
+              <img
+                class="update-img"
+                onmouseover="over(1)"
+                src="image/update_two.jpg"
+              />
+              <div class="buynow">
+                <button
+                  class="buy"
+                  onclick="window.location.href='update-two.html'"
+                >
+                  Buy Now
+                </button>
+                <button class="where">where to buy</button>
+              </div>
+              <p class="detail">LG G8X ThinQ | Dual Screen</p>
+
+              <p class="price">Rs.39990</p>
+            </div>
+            <div class="update-card" onmouseover="over(2)" onmouseout="out(2)">
+              <img
+                class="update-img"
+                onmouseover="over(2)"
+                src="image/update_three.jpg"
+              />
+              <div class="buynow">
+                <button
+                  class="buy"
+                  onclick="window.location.href='update-three.html'"
+                >
+                  Buy Now
+                </button>
+                <button class="where">where to buy</button>
+              </div>
+              <p class="detail">LG GX 77 (195.58CM) 4K Smart OLED TV</p>
+              <p class="price">Rs.26990</p>
+            </div>
+            <div class="update-card" onmouseover="over(3)" onmouseout="out(3)">
+              <img
+                class="update-img"
+                onmouseover="over(3)"
+                src="image/update_four.jpg"
+              />
+              <div class="buynow">
+                <button
+                  class="buy"
+                  onclick="window.location.href='update-four.html'"
+                >
+                  Buy Now
+                </button>
+                <button class="where">where to buy</button>
+              </div>
+              <p class="detail">
+                Dual protection airtight Stainless steel Tank with Multi Stage
+                RO Filtration
+              </p>
+              <p class="price">Rs.6990</p>
+            </div>
+            <div class="update-card" onmouseover="over(4)" onmouseout="out(4)">
+              <img
+                class="update-img"
+                onmouseover="over(4)"
+                src="image/update_five.jpg"
+              />
+              <div class="buynow">
+                <button
+                  class="buy"
+                  onclick="window.location.href='update-five.html'"
+                >
+                  Buy Now
+                </button>
+                <button class="where">where to buy</button>
+              </div>
+              <p class="detail">LG Nano99 75 (190.5cm) 8K NanoCell TV</p>
+              <p class="price">Rs.78990</p>
+            </div>
+            <div class="update-card" onmouseover="over(5)" onmouseout="out(5)">
+              <img
+                class="update-img"
+                onmouseover="over(5)"
+                src="image/update_six.jpg"
+              />
+              <div class="buynow">
+                <button
+                  class="buy"
+                  onclick="window.location.href='update-six.html'"
+                >
+                  Buy Now
+                </button>
+                <button class="where">where to buy</button>
+              </div>
+              <p class="detail">LG All In One Microwave Oven</p>
+              <p class="price">Rs.10990</p>
+            </div>
+            <div class="update-card" onmouseover="over(6)" onmouseout="out(6)">
+              <img
+                class="update-img"
+                onmouseover="over(6)"
+                src="image/update_seven.jpg"
+              />
+              <div class="buynow">
+                <button
+                  class="buy"
+                  onclick="window.location.href='update-seven.html'"
+                >
+                  Buy Now
+                </button>
+                <button class="where">where to buy</button>
+              </div>
+              <p class="detail">LG ZX 88 (223.25cm) 8K SIGNATURE OLED TV</p>
+              <p class="price">Rs.100990</p>
+            </div>
+            <div class="update-card" onmouseover="over(7)" onmouseout="out(7)">
+              <img
+                class="update-img"
+                onmouseover="over(7)"
+                src="image/update_eight.jpg"
+              />
+              <div class="buynow">
+                <button
+                  class="buy"
+                  onclick="window.location.href='update-eight.html'"
+                >
+                  Buy Now
+                </button>
+                <button class="where">where to buy</button>
+              </div>
+              <p class="detail">Every Color Comes Alive</p>
+              <p class="price">Rs.10990</p>
+            </div>
+            <div class="update-card" onmouseover="over(8)" onmouseout="out(8)">
+              <img
+                class="update-img"
+                onmouseover="over(8)"
+                src="image/update_nine.jpg"
+              />
+              <div class="buynow">
+                <button
+                  class="buy"
+                  onclick="window.location.href='update-nine.html'"
+                >
+                  Buy Now
+                </button>
+                <button class="where">where to buy</button>
+              </div>
+              <p class="detail">LG CX 55 (139.7cm) 4K Smart OLED TV</p>
+              <p class="price">Rs.15990</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- product images -->
+
+      <div class="product-container">
+        <div class="product-card1 similar-card">
+          <img src="image/grid-one.jpg" />
+        </div>
+        <div class="product-card2 similar-card">
+          <img src="image/grid-two.jpg" />
+        </div>
+
+        <div class="product-card3 similar-card">
+          <img src="image/grid-three.jpg" />
+        </div>
+
+        <div class="product-card4 similar-card">
+          <img src="image/grid-four.jpg" />
+        </div>
+
+        <div class="product-card5 similar-card">
+          <img src="image/grid-five.jpg" />
+        </div>
+      </div>
+
+      <!-- services -->
+      <div class="service-container">
+        <div class="service-card">
+          <div class="service-img">
+            <img src="image/register.jpg" />
+          </div>
+          <div class="service-title">
+            <p>Register Your Product</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img">
+            <img src="image/product.jpg" />
+          </div>
+          <div class="service-title">
+            <p>Product Support</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img">
+            <img src="image/enquiry.jpg" />
+          </div>
+          <div class="service-title">
+            <p>Product Enquiry</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- contact -->
+
+      <div class="contact-container" id="contact">
+        <div class="contact-title">
+          <p id="contact-title">LG Product Service and Support</p>
+          <p id="contact-content">
+            Get your questions answered about product setup, use and care,
+            repair and maintenance issues. We can help.
+          </p>
+        </div>
+
+        <div class="contact-details">
+          <div class="contact-card">
+            <div class="contact-img">
+              <img src="image/mail.jpg" />
+            </div>
+            <div class="contact-detail">
+              <p>Send an Email</p>
+            </div>
+            <div class="detail-list">
+              <ul>
+                <li>Send a Message to LG Customer Support</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-img">
+              <img src="image/wap.jpg" />
+            </div>
+            <div class="contact-detail">
+              <p>WhatsApp</p>
+            </div>
+            <div class="detail-list">
+              <ul>
+                <li>971109999</li>
+                <li>9:00 AM to 6:00 PM</li>
+                <li>7 days a week</li>
+                <li>Except national holidays</li>
+                <li>Click to Connect on WhatsApp</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-img">
+              <img src="image/mail.jpg" />
+            </div>
+            <div class="contact-detail">
+              <p>Mail</p>
+            </div>
+            <div class="detail-list">
+              <ul>
+                <li>LG Electronics India Pvt. Ltd,</li>
+                <li>A-24/6,</li>
+                <li>Mohan Cooperative Industrial Estate,</li>
+                <li>Mathura Road,</li>
+                <li>New Delhi - 110044</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- origin -->
+
+      <div class="origin-container">
+        <div class="location">
+          <img src="image/india.png" />
+          <p>India, Engish</p>
+        </div>
+        <div class="location-logo">
+          <img src="image/loc1.svg" />
+          <img src="image/loc2.svg" />
+          <img src="image/loc3.svg" />
+          <img src="image/loc4.svg" />
+        </div>
+      </div>
+
+      <!-- footer -->
+
+      <div class="footer">
+        <p>Copyright © 2020 by Dinesh. All rights reserved</p>
+        <div class="footer-arrow">
+          <img src="image/arrow_one.png" onclick="window.location.href='#'" />
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+
+    <script src="script/script.js"></script>
+    <script src="script/script-highlight.js"></script>
+    <script src="script/script-item.js"></script>
+    <script src="script/script-update.js"></script>
+    <script src="script/login-script.js"></script>
+  </body>
+</html>
